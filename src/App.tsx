@@ -43,14 +43,11 @@ const App: FC = () => {
             });
           }
           if (isCategory) {
-            console.log(
-              `acc.category[saveCategory]`,
-              acc.category[saveCategory]
-            );
-            console.log(` [item[0]]: [item[1], item[2], item[3]]`, {
-              [item[0]]: [item[1], item[2], item[3]],
-            });
-
+            for (var i = 1; i < Object.keys(item).length; i++) {
+              if (item[i] === "X") {
+                item[i] = "✖";
+              }
+            }
             acc.category[saveCategory].push({
               [item[0]]: [item[1], item[2], item[3]],
             });
