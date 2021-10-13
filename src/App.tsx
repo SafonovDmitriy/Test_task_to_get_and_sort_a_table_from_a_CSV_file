@@ -1,10 +1,31 @@
 import Papa from "papaparse";
 import React, { FC, useEffect, useState } from "react";
+import { useTable } from "react-table";
 import "./App.css";
-
+interface mainConfig {
+  [k: string]: string[];
+}
+interface ITableData {
+  [k: string]: string[] | mainConfig;
+}
 const App: FC = () => {
-  const [tableData, setTableData] = useState<any>([]);
-  console.log(`tableData`, tableData);
+  const [tableData, setTableData] = useState<any>({});
+  const columns = [
+    {
+      Header: "First Name",
+      accessor: "firstName",
+    },
+    {
+      Header: "Last Name",
+      accessor: "lastName",
+    },
+  ];
+  // const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+  //   useTable({
+  //     columns,
+  //     data,
+  //   });
+
   useEffect(() => {
     const fetchCsv = async () => {
       const response = await fetch(
@@ -22,7 +43,6 @@ const App: FC = () => {
       let isCategory = false;
       const _data: any[] = data.data;
       let saveCategory: string = "";
-      console.log(`_data`, _data);
 
       setTableData(
         _data.reduce((acc, item) => {
@@ -62,14 +82,29 @@ const App: FC = () => {
     };
     fetchCsv();
   }, []);
+  const showTable = () => {
+    const _JSXTable = [];
+    console.log(`tableData`, tableData);
+    for (var key in tableData) {
+      if (Array.isArray(tableData[key])) {
+        _JSXTable.push(
+          <div className="row">
+            <span>{key}</span>
+            {tableData[key].map((item: any, idx: number) => (
+              <span>{item}</span>
+            ))}
+          </div>
+        );
+      }
+    }
+    return _JSXTable;
+  };
 
-  // console.log(`tableData`, tableData);
-  // const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-  //   useTable({
-  //     columns,
-  //     data,
-  //   });
-  return <div className="app_wrapper"></div>;
+  return Object.keys(tableData).length ? (
+    <div className="app_wrapper">
+      <table>{showTable()}</table>
+    </div>
+  ) : null;
 };
 
 export default App;
