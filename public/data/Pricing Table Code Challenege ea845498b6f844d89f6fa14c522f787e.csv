@@ -1,6 +1,6 @@
-﻿Tiers,Starter,Advanced,Enterprise
-Price (€),3,10,100
-Description,Good place to start,For the startup with more needs,for big companies with big dreams
+﻿Names,Pkg1,Pkg2,Pkg3
+Price (€),5,50,100
+Description,Pkg1 description,Pkg2 description,Pkg3 description
 ,,,
 Reporting,,,
 Detailed Reports,-,X,X
