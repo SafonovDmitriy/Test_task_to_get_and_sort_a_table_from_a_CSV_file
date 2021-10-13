@@ -4,6 +4,7 @@ import "./App.css";
 
 const App: FC = () => {
   const [tableData, setTableData] = useState<any>([]);
+  console.log(`tableData`, tableData);
   useEffect(() => {
     const fetchCsv = async () => {
       const response = await fetch(
@@ -20,23 +21,47 @@ const App: FC = () => {
       });
       let isCategory = false;
       const _data: any[] = data.data;
-      const test = _data.reduce((acc, item) => {
-        if (!String(item[0]).trim().length) {
-          isCategory = true;
-          return acc;
-        }
-        if (isCategory) {
-          console.log(isCategory);
-          return Object.assign(acc, {
-            category: { [item[0]]: [item[1], item[2], item[3]] },
-          });
-        } else {
-          return Object.assign(acc, {
-            [item[0]]: [item[1], item[2], item[3]],
-          });
-        }
-      }, {});
-      console.log(`test`, test);
+      let saveCategory: string = "";
+      console.log(`_data`, _data);
+
+      setTableData(
+        _data.reduce((acc, item) => {
+          if (!String(item[0]).trim().length) {
+            isCategory = true;
+
+            if (acc.category) {
+              return acc;
+            } else {
+              return Object.assign(acc, { category: {} });
+            }
+          }
+          if (String(item[0]).trim().length && !String(item[1]).trim().length) {
+            saveCategory = item[0];
+
+            return Object.assign(acc, {
+              category: { ...acc.category, [saveCategory]: [] },
+            });
+          }
+          if (isCategory) {
+            console.log(
+              `acc.category[saveCategory]`,
+              acc.category[saveCategory]
+            );
+            console.log(` [item[0]]: [item[1], item[2], item[3]]`, {
+              [item[0]]: [item[1], item[2], item[3]],
+            });
+
+            acc.category[saveCategory].push({
+              [item[0]]: [item[1], item[2], item[3]],
+            });
+            return acc;
+          } else {
+            return Object.assign(acc, {
+              [item[0]]: [item[1], item[2], item[3]],
+            });
+          }
+        }, {})
+      );
     };
     fetchCsv();
   }, []);
