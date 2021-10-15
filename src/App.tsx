@@ -15,9 +15,7 @@ const App = () => {
 
   return dataTable.length ? (
     <div className="app_wrapper">
-      <table className="app_table">
-        <Table data={dataTable} />
-      </table>
+      <Table data={dataTable} />
     </div>
   ) : null;
 };
