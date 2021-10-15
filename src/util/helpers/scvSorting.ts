@@ -28,6 +28,14 @@ const scvSorting = (data: string[][]) => {
 
   for (var value of categoriesList.sort((a: IRow, b: IRow) => mySort(a, b))) {
     value[1].sort((a: string[], b: string[]) => mySort(a, b));
+    value[1] = value[1].map((subValue: string[]) =>
+      subValue.map((item: string) => {
+        if (item === "X") return String.fromCharCode(88);
+        if (item === "-") return String.fromCharCode(150);
+        return item;
+      })
+    );
+
     newData.push(["", "", "", ""], [value[0], "", "", ""], ...value[1]);
   }
   return newData;

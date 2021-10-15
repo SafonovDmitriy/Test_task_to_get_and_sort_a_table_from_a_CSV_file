@@ -16,9 +16,7 @@ export const fetchData =
   () => async (dispatch: ThunkDispatch<RootType, undefined, any>) => {
     try {
       dispatch(setLoadingAction(true));
-      const data = await svcParser(
-        "data/Pricing Table Code Challenege ea845498b6f844d89f6fa14c522f787e.csv"
-      );
+      const data = await svcParser("data/data.csv");
       dispatch(fetchDataAction(scvSorting(data)));
     } catch (error) {
       console.log(`error`, error);
