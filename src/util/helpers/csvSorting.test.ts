@@ -1,4 +1,4 @@
-import scvSorting from "./scvSorting";
+import scvSorting from "./csvSorting";
 
 describe("scvSorting", () => {
   it("sort data for table", async () => {
@@ -41,22 +41,22 @@ describe("scvSorting", () => {
       ],
       ["", "", "", ""],
       ["Application Intergrations", "", "", ""],
-      ["Install custom apps", "X", "", ""],
-      ["Install new apps", "", "X", "X"],
+      ["Install custom apps", "X", "-", "-"],
+      ["Install new apps", "-", "X", "X"],
       ["", "", "", ""],
       ["Blog", "", "", ""],
       ["Create your own blog", "X", "X", "X"],
-      ["Upload Images", "", "X", "X"],
+      ["Upload Images", "-", "X", "X"],
       ["", "", "", ""],
       ["File Storage", "", "", ""],
       ["Share files with team", "X", "X", "X"],
-      ["Upload files", "", "X", ""],
-      ["Watch Videos", "", "", ""],
+      ["Upload files", "-", "X", "-"],
+      ["Watch Videos", "-", "-", "-"],
       ["", "", "", ""],
       ["Reporting", "", "", ""],
       ["Create your own reports", "X", "X", "X"],
-      ["Detailed Reports", "", "X", "X"],
-      ["Weekly Data Reports", "", "X", "X"],
+      ["Detailed Reports", "-", "X", "X"],
+      ["Weekly Data Reports", "-", "X", "X"],
     ];
 
     expect(scvSorting(withoutSortData)).toStrictEqual(sortData);

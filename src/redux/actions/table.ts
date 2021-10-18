@@ -1,6 +1,6 @@
 import { ThunkDispatch } from "redux-thunk";
-import { scvSorting } from "../../util";
-import svcParser from "../../util/helpers/svcParser";
+import { csvSorting } from "../../util";
+import csvParser from "../../util/helpers/csvParser";
 import { tableActionTypes } from "../actionTypes/table";
 import { RootType } from "../store";
 
@@ -12,9 +12,9 @@ export const fetchDataAction = (payload: string[][]) => ({
 export const fetchData =
   () => async (dispatch: ThunkDispatch<RootType, undefined, any>) => {
     try {
-      const data = await svcParser("data/data.csv");
-      console.log(`data`, data);
-      dispatch(fetchDataAction(scvSorting(data)));
+      const data = await csvParser("data/data.csv");
+      const sortData = csvSorting(data);
+      dispatch(fetchDataAction(sortData));
     } catch (error) {
       console.log(`error`, error);
     }

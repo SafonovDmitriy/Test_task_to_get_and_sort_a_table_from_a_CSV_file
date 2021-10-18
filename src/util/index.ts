@@ -1,1 +1,1 @@
-export { default as scvSorting } from "./helpers/scvSorting";
+export { default as csvSorting } from "./helpers/csvSorting";

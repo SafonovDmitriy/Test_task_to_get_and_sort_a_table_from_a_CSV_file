@@ -1,5 +1,5 @@
 import { TextDecoder } from "util";
-import svcParser from "./svcParser";
+import csvParser from "./csvParser";
 
 //@ts-ignore
 global.TextDecoder = TextDecoder;
@@ -29,7 +29,7 @@ const withoutSortData = [
 
 describe("scvSorting", () => {
   it("return data for render table", async () => {
-    const data = await svcParser("/data/data.csv");
+    const data = await csvParser("/data/data.csv");
     expect(data.length).not.toBe(0);
   });
 });

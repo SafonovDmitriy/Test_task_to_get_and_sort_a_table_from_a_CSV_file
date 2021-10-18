@@ -5,9 +5,10 @@ import App from "./App";
 import store from "./redux/store";
 
 test("renders App", () => {
-  render(
+  const { container } = render(
     <Provider store={store}>
       <App />
     </Provider>
   );
+  expect(container).toBeInTheDocument();
 });

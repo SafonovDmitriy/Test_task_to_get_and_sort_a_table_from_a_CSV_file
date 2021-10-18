@@ -3,13 +3,24 @@ import { dataForTableSelector } from "../../redux/selectors";
 import "./TableStyle.css";
 const Table = () => {
   const data: string[][] = useSelector(dataForTableSelector);
+  const changeSymbol = (symbol: string) => {
+    switch (symbol) {
+      case "X":
+        return "\u274C";
+      case "-":
+        return "\u2705";
+
+      default:
+        return symbol;
+    }
+  };
   return (
     <table className="app_table">
       <tbody>
         {data.map((tr, idxTr) => (
           <tr key={idxTr}>
             {tr.map((td, idxTd) => (
-              <td key={`${idxTr}-${idxTd}`}>{td === "X" ? "\u274C" : td}</td>
+              <td key={`${idxTr}-${idxTd}`}>{changeSymbol(td)}</td>
             ))}
           </tr>
         ))}

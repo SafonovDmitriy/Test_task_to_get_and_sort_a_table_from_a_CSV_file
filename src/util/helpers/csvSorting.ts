@@ -2,12 +2,13 @@ import { IRow } from "../../redux/actionInterfaces/table";
 
 let categiryTitle: string = "";
 const newData: string[][] = [];
-const scvSorting = (data: string[][]) => {
+const csvSorting = (data: string[][]) => {
   let categoriesList = data.reduce((acc, item: string[]) => {
-    if (!lengthArray(item)) {
+    if (!numberOfNotEmptyFields(item)) {
       return acc;
     }
-    if (lengthArray(item) === 1) {
+
+    if (numberOfNotEmptyFields(item) === 1) {
       categiryTitle = item[0];
       acc.push([categiryTitle, []]);
     }
@@ -16,7 +17,7 @@ const scvSorting = (data: string[][]) => {
       newData.push(item);
       return acc;
     }
-    if (lengthArray(item) > 1) {
+    if (numberOfNotEmptyFields(item) > 1) {
       const itemIndex = acc.findIndex(
         (item: IRow) => item[0] === categiryTitle
       );
@@ -24,7 +25,8 @@ const scvSorting = (data: string[][]) => {
     }
 
     return acc;
-  }, [] as [string, string[][]][]);
+  }, [] as IRow[]);
+
   const assortedArrayByCategory = categoriesList.sort((a: IRow, b: IRow) =>
     mySort(a, b)
   );
@@ -35,7 +37,7 @@ const scvSorting = (data: string[][]) => {
   return newData;
 };
 
-const lengthArray = (array: string[]): number =>
+const numberOfNotEmptyFields = (array: string[]): number =>
   array.filter((item) => item.length).length;
 
 const mySort = (a: IRow | string[], b: IRow | string[]): number => {
@@ -44,4 +46,4 @@ const mySort = (a: IRow | string[], b: IRow | string[]): number => {
   return 0;
 };
 
-export default scvSorting;
+export default csvSorting;
