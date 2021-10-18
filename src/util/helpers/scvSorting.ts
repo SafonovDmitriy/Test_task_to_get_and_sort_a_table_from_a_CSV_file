@@ -25,26 +25,20 @@ const scvSorting = (data: string[][]) => {
 
     return acc;
   }, [] as [string, string[][]][]);
-
-  for (var value of categoriesList.sort((a: IRow, b: IRow) => mySort(a, b))) {
+  const assortedArrayByCategory = categoriesList.sort((a: IRow, b: IRow) =>
+    mySort(a, b)
+  );
+  for (const value of assortedArrayByCategory) {
     value[1].sort((a: string[], b: string[]) => mySort(a, b));
-    value[1] = value[1].map((subValue: string[]) =>
-      subValue.map((item: string) => {
-        if (item === "X") return String.fromCharCode(88);
-        if (item === "-") return String.fromCharCode(150);
-        return item;
-      })
-    );
-
     newData.push(["", "", "", ""], [value[0], "", "", ""], ...value[1]);
   }
   return newData;
 };
 
-const lengthArray = (array: string[]) =>
-  array.filter((item) => item.length && item).length;
+const lengthArray = (array: string[]): number =>
+  array.filter((item) => item.length).length;
 
-const mySort = (a: IRow | string[], b: IRow | string[]) => {
+const mySort = (a: IRow | string[], b: IRow | string[]): number => {
   if (a[0] > b[0]) return 1;
   if (a[0] < b[0]) return -1;
   return 0;
