@@ -6,6 +6,7 @@ export interface ITableState {
   data: string[][];
 }
 export type IRow = [string, string[][]];
+
 export interface IFetchData {
   type: tableActionTypes.FETCH_DATA;
   payload: string[][];

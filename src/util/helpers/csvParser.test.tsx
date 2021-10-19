@@ -1,8 +1,6 @@
 import { TextDecoder } from "util";
 import csvParser from "./csvParser";
 
-//@ts-ignore
-global.TextDecoder = TextDecoder;
 const withoutSortData = [
   ["Names", "Pkg1", "Pkg2", "Pkg3"],
   ["Price (€)", "5", "50", "100"],
@@ -27,9 +25,22 @@ const withoutSortData = [
   ["Install custom apps", "X", "-", "-"],
 ];
 
-describe("scvSorting", () => {
+jest.mock("papaparse", () => {
+  const originalModule = jest.requireActual("papaparse");
+  return {
+    ...originalModule,
+    parse: () => ({ data: withoutSortData }),
+  };
+});
+
+describe("csvParser", () => {
+  //@ts-ignore
+  global.TextDecoder = TextDecoder;
+
   it("return data for render table", async () => {
     const data = await csvParser("/data/data.csv");
-    expect(data.length).not.toBe(0);
+    //@ts-ignore
+    // jest.spyOn(global, "TextDecoder").mockReturnValue(TextDecoder);
+    expect(data).toStrictEqual(withoutSortData);
   });
 });
