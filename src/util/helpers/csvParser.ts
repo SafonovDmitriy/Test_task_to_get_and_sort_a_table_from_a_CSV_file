@@ -10,7 +10,6 @@ const csvParser = async (path: string) => {
     delimiter: ",",
     skipEmptyLines: "greedy",
   });
-
   return data;
 };
 export default csvParser;

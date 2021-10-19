@@ -1,7 +1,7 @@
 import scvSorting from "./csvSorting";
 
-describe("scvSorting", () => {
-  it("sort data for table", async () => {
+describe("scvSorting Helper", () => {
+  it("Sorting data array for table", async () => {
     const withoutSortData = [
       ["Names", "Pkg1", "Pkg2", "Pkg3"],
       ["Price (€)", "5", "50", "100"],
@@ -56,7 +56,7 @@ describe("scvSorting", () => {
     ];
     expect(scvSorting(withoutSortData)).toStrictEqual(sortData);
   });
-  it("Equal values", async () => {
+  it("Repeating values in the data array for the table", async () => {
     const withoutSortData = [
       ["Names", "Pkg1", "Pkg2", "Pkg3"],
       ["Price (€)", "5", "50", "100"],

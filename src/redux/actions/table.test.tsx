@@ -52,16 +52,23 @@ const sortData = [
 ];
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-describe("table Actions", () => {
+describe("Table Actions", () => {
   const store = mockStore({ table: { data: [] } });
 
-  it("action works out", () => {
-    jest.spyOn(csvParser, "default").mockResolvedValue(withoutSortData);
-    jest.spyOn(csvSorting, "default").mockReturnValue(sortData);
+  it("Calling the features of obtaining and sorting an array for a table", async () => {
+    const spyCsvParser = jest
+      .spyOn(csvParser, "default")
+      .mockResolvedValue(withoutSortData);
+    const spyCsvSorting = jest
+      .spyOn(csvSorting, "default")
+      .mockReturnValue(sortData);
     //@ts-ignore
-    store.dispatch(fetchData());
+    await store.dispatch(fetchData());
+
+    expect(spyCsvParser).toHaveBeenCalledTimes(1);
+    expect(spyCsvSorting).toHaveBeenCalledTimes(1);
   });
-  it("action csvParser return Error", () => {
+  it("Return errors from csvParser and hit in Catch", () => {
     jest.spyOn(csvParser, "default").mockRejectedValue("mockError");
     //@ts-ignore
     store.dispatch(fetchData());

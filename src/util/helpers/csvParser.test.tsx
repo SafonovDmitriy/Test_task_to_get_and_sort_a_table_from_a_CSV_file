@@ -33,13 +33,13 @@ jest.mock("papaparse", () => {
   };
 });
 
-describe("csvParser", () => {
+describe("csvParser Helper", () => {
   beforeEach(() => {
     //@ts-ignore
     global.TextDecoder = TextDecoder;
   });
 
-  it("return data for render table", async () => {
+  it("Returning an array from CSV file", async () => {
     const data = await csvParser("/data/data.csv");
     expect(data).toStrictEqual(withoutSortData);
   });

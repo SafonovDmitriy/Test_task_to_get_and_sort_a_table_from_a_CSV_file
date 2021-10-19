@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import { Table } from "..";
-describe("Table", () => {
+describe("Table Component", () => {
   const sortData = [
     ["Names", "Pkg1", "Pkg2", "Pkg3"],
     ["Price (€)", "5", "50", "100"],
@@ -31,7 +31,7 @@ describe("Table", () => {
   const middlewares = [thunk];
   const mockStore = configureMockStore(middlewares);
   const store = mockStore({ table: { data: sortData } });
-  it("render Table without crash", () => {
+  it("render Table component", () => {
     const { container } = render(
       <Provider store={store}>
         <Table />
