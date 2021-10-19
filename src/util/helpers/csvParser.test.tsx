@@ -34,13 +34,13 @@ jest.mock("papaparse", () => {
 });
 
 describe("csvParser", () => {
-  //@ts-ignore
-  global.TextDecoder = TextDecoder;
+  beforeEach(() => {
+    //@ts-ignore
+    global.TextDecoder = TextDecoder;
+  });
 
   it("return data for render table", async () => {
     const data = await csvParser("/data/data.csv");
-    //@ts-ignore
-    // jest.spyOn(global, "TextDecoder").mockReturnValue(TextDecoder);
     expect(data).toStrictEqual(withoutSortData);
   });
 });

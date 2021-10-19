@@ -1,19 +1,19 @@
 import { useSelector } from "react-redux";
 import { dataForTableSelector } from "../../redux/selectors";
 import "./TableStyle.css";
+const changeSymbol = (symbol: string) => {
+  switch (symbol) {
+    case "X":
+      return "\u274C";
+    case "-":
+      return "\u2705";
+
+    default:
+      return symbol;
+  }
+};
 const Table = () => {
   const data: string[][] = useSelector(dataForTableSelector);
-  const changeSymbol = (symbol: string) => {
-    switch (symbol) {
-      case "X":
-        return "\u274C";
-      case "-":
-        return "\u2705";
-
-      default:
-        return symbol;
-    }
-  };
   return (
     <table className="app_table">
       <tbody>

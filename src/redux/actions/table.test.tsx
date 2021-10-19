@@ -53,16 +53,16 @@ const sortData = [
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 describe("table Actions", () => {
-  const store = mockStore({ table: { data: {} } });
+  const store = mockStore({ table: { data: [] } });
 
-  it("action works out", async () => {
+  it("action works out", () => {
     jest.spyOn(csvParser, "default").mockResolvedValue(withoutSortData);
     jest.spyOn(csvSorting, "default").mockReturnValue(sortData);
     //@ts-ignore
     store.dispatch(fetchData());
   });
-  it("action csvParser return Error", async () => {
-    jest.spyOn(csvParser, "default").mockRejectedValue(withoutSortData);
+  it("action csvParser return Error", () => {
+    jest.spyOn(csvParser, "default").mockRejectedValue("mockError");
     //@ts-ignore
     store.dispatch(fetchData());
   });

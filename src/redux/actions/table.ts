@@ -16,6 +16,6 @@ export const fetchData =
       const sortData = csvSorting(data);
       dispatch(fetchDataAction(sortData));
     } catch (error) {
-      // console.log(`error`, error);
+      console.log(`error`, error);
     }
   };
