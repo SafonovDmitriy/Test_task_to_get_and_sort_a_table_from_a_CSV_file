@@ -1,5 +1,3 @@
-import { IRow } from "../interfaces";
-
 const csvSorting = (
   notASortedArrayForPriceTable: Array<string[]>
 ): Array<string[]> => {

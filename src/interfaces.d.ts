@@ -1,1 +1,1 @@
-export type IRow = [string, Array<string[]>];
+declare type IRow = [string, Array<string[]>];
