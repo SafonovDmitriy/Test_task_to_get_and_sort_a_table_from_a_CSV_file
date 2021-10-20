@@ -27,8 +27,8 @@
     "build": "react-scripts build",
     "test:dev": "react-scripts test --watchAll --verbose",
     "test:prod": "react-scripts test --silent src",
-    "coverage:dev": "react-scripts test --coverage",
-    "coverage:prod": "react-scripts test --coverage --silent  src",
+    "coverage:dev": "react-scripts test --coverage --verbose src",
+    "coverage:prod": "react-scripts test --coverage --silent src",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
