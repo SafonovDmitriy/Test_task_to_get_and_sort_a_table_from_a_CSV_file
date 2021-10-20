@@ -16,7 +16,7 @@ Typed with TypeScript.
 
 In the project directory you can run:
 
-### `npm start'.
+### npm start.
 
 Starts the application in development mode.\
 Open [http://localhost:3000](http://localhost:3000) for viewing in a browser.
@@ -24,15 +24,15 @@ Open [http://localhost:3000](http://localhost:3000) for viewing in a browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test:dev'
+### npm test:dev
 
 Starts the test program in interactive view mode.
 
-### `npm test:prod`.
+### npm test:prod.
 
 Executes the test run while hiding the console.log
 
-### `npm run build`.
+### npm run build.
 
 Builds the application for production into the `build` folder.\
 It properly connects React in production mode and optimizes the build for better performance.
@@ -47,7 +47,7 @@ See [deployment](https://facebook.github.io/create-react-app/docs/deployment) fo
 Starts the test run program in interactive view mode.
 Builds a test coverage tree
 
-### `npm run coverage:prod`.
+### npm run coverage:prod.
 
 Launches the program for running tests. Builds the test coverage tree and hides all console.log
 
@@ -61,15 +61,9 @@ Instead, it will copy all configuration files and transitive dependencies (webpa
 
 You will never have to use `eject`. The advanced feature set is suitable for small to medium-sized deployments, and you should not feel obligated to use this feature. However, we understand that this tool will not be useful if you can't adjust it when you are ready for it.
 
-##To start the application
+## To start the application
 
-To start the application you will need to install all the dependencies associated with it with the command
-
-### npm i
-
-and directly run with the command
-
-### npm start
+To start the application you will need to install all the dependencies associated with it with the command `npm i` and directly run with the command `npm start`
 
 ## License
 
