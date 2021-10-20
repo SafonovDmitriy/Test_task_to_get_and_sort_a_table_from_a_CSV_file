@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchDataForPricingTables } from "../../redux/actions/PricingTablesActions";
+import { fetchDataForPricingTables } from "../../redux/actions/pricingTablesActions";
 import { dataForPricingTablesSelector } from "../../redux/selectors";
 import PricingTables from "./PricingTables";
 

@@ -3,7 +3,7 @@ import thunk from "redux-thunk";
 import * as csvParser from "../../helpers/csvParser";
 import * as csvSorting from "../../helpers/csvSorting";
 
-import { fetchDataForPricingTables } from "./PricingTablesActions";
+import { fetchDataForPricingTables } from "./pricingTablesActions";
 
 const withoutSortData = [
   ["Names", "Pkg1", "Pkg2", "Pkg3"],

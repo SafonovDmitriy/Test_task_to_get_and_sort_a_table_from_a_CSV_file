@@ -2,7 +2,7 @@ import { Action } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import csvParser from "../../helpers/csvParser";
 import csvSorting from "../../helpers/csvSorting";
-import { pricingTableActionTypes } from "../actionTypes/table";
+import { pricingTableActionTypes } from "../actionTypes/pricingTables";
 import { RootType } from "../store";
 
 export const setDataForPricingTablesAction = (payload: string[][]) => ({

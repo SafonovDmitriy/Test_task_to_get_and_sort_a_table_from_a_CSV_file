@@ -2,7 +2,7 @@ import {
   IFetchDataForPricingTable,
   ITableState,
 } from "../actionInterfaces/pricingTables";
-import { pricingTableActionTypes } from "../actionTypes/table";
+import { pricingTableActionTypes } from "../actionTypes/pricingTables";
 
 const initialState: ITableState = {
   data: [],

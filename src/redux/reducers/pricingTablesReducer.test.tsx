@@ -1,5 +1,5 @@
-import { setDataForPricingTablesAction } from "../actions/PricingTablesActions";
-import { pricingTablesReducer } from "./pricingTables";
+import { setDataForPricingTablesAction } from "../actions/pricingTablesActions";
+import { pricingTablesReducer } from "./pricingTablesReducer";
 
 describe("Pricing Tables reducer", () => {
   const store = { data: [] };
