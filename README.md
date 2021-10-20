@@ -1,10 +1,10 @@
-#Skills presentation quiz
+# Skills presentation quiz
 
-##Summary
+## Summary
 
 Parser of a price table from a CSV file. Sorts this table by service category and by nested criteria.
 
-##Instrumentation.
+## Instrumentation.
 
 React was used to implement this assignment.
 CSS was used for styling.
@@ -71,8 +71,6 @@ and directly run with the command
 
 ### npm start
 
-##License
+## License
 
 This project uses the following license: MIT.
-
-Translated with www.DeepL.com/Translator (free version)
