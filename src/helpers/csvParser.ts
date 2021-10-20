@@ -1,12 +1,12 @@
 import Papa from "papaparse";
 
-const csvParser = async (path: string) => {
+const csvParser = async (path: string): Promise<Array<string[]>> => {
   const response = await fetch(path);
   const result = await response?.body?.getReader().read();
   const decoder = new TextDecoder("utf-8");
-  const csv = decoder.decode(result?.value);
+  const csv: string = decoder.decode(result?.value);
 
-  const { data }: { data: string[][] } = Papa.parse(csv, {
+  const { data }: { data: Array<string[]> } = Papa.parse(csv, {
     delimiter: ",",
     skipEmptyLines: "greedy",
   });

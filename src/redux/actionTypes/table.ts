@@ -1,3 +1,3 @@
-export enum tableActionTypes {
-  FETCH_DATA = "FETCH_DATA",
+export enum pricingTableActionTypes {
+  SET_DATA_FOR_PRICING_TABLES = "SET_DATA_FOR_PRICING_TABLES",
 }

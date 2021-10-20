@@ -1,8 +1,9 @@
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import * as csvParser from "../../util/helpers/csvParser";
-import * as csvSorting from "../../util/helpers/csvSorting";
-import { fetchData } from "./table";
+import * as csvParser from "../../helpers/csvParser";
+import * as csvSorting from "../../helpers/csvSorting";
+
+import { fetchDataForPricingTables } from "./PricingTablesActions";
 
 const withoutSortData = [
   ["Names", "Pkg1", "Pkg2", "Pkg3"],
@@ -52,7 +53,7 @@ const sortData = [
 ];
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-describe("Table Actions", () => {
+describe("Pricing Tables Actions", () => {
   const store = mockStore({ table: { data: [] } });
 
   it("Calling the features of obtaining and sorting an array for a table", async () => {
@@ -62,15 +63,17 @@ describe("Table Actions", () => {
     const spyCsvSorting = jest
       .spyOn(csvSorting, "default")
       .mockReturnValue(sortData);
+
     //@ts-ignore
-    await store.dispatch(fetchData());
+    await store.dispatch(fetchDataForPricingTables());
 
     expect(spyCsvParser).toHaveBeenCalledTimes(1);
     expect(spyCsvSorting).toHaveBeenCalledTimes(1);
   });
   it("Return errors from csvParser and hit in Catch", () => {
     jest.spyOn(csvParser, "default").mockRejectedValue("mockError");
+
     //@ts-ignore
-    store.dispatch(fetchData());
+    store.dispatch(fetchDataForPricingTables());
   });
 });

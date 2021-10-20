@@ -1,10 +1,10 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import { tableReducer } from "./reducers/table";
+import { pricingTablesReducer } from "./reducers/pricingTables";
 
 const reducers = combineReducers({
-  table: tableReducer,
+  pricingTables: pricingTablesReducer,
 });
 
 const store = createStore(

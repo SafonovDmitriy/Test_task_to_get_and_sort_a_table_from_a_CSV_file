@@ -30,7 +30,7 @@ describe("Table Component", () => {
   ];
   const middlewares = [thunk];
   const mockStore = configureMockStore(middlewares);
-  const store = mockStore({ table: { data: sortData } });
+  const store = mockStore({ pricingTables: { data: sortData } });
   it("render Table component", () => {
     const { container } = render(
       <Provider store={store}>
