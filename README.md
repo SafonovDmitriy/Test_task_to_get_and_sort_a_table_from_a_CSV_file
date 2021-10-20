@@ -51,7 +51,7 @@ Builds a test coverage tree
 
 Launches the program for running tests. Builds the test coverage tree and hides all console.log
 
-### `npm run eject
+### npm run eject
 
 \*\*Note: this is a one-way operation. Once you `eject`, you cannot go back!
 
