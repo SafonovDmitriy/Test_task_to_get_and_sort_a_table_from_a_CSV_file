@@ -2,7 +2,7 @@
   display: flex;
 
   flex-direction: column;
-  padding: 15px;
+
   max-width: 900px;
 }
 .app_table tr {
@@ -10,7 +10,7 @@
   grid-template-columns: repeat(4, 1fr);
 }
 .app_table tr:first-child td {
-  font-size: 24px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -19,15 +19,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  font-size: 10px;
   border: 1px solid black;
-  min-height: 18px;
+
   padding: 5px;
 }
 .app_table td:first-child {
   text-align: left;
   justify-content: left;
-  font-size: 16px;
+  font-size: 10px;
+  padding: 5px;
 }
 
 .boldText {
@@ -47,18 +48,26 @@
   border-right: 2px solid black;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (min-width: 500px) {
   .app_table td {
-    font-size: 14px;
+    font-size: 12px;
+    letter-spacing: -0.8px;
+  }
+  .app_table {
+    padding: 15px;
   }
   .app_table tr:first-child td {
-    font-size: 22px;
+    font-size: 16px;
+  }
+  .app_table td:first-child {
+    font-size: 14px;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 700px) {
   .app_table td {
     font-size: 12px;
     letter-spacing: -0.5px;
+    min-height: 18px;
   }
   .app_table tr:first-child td {
     font-size: 20px;
@@ -67,16 +76,11 @@
     font-size: 14px;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 1100px) {
   .app_table td {
-    font-size: 10px;
-    letter-spacing: -0.8px;
-    padding: 3px;
+    font-size: 16px;
   }
   .app_table tr:first-child td {
-    font-size: 14px;
-  }
-  .app_table td:first-child {
-    font-size: 12px;
+    font-size: 22px;
   }
 }
