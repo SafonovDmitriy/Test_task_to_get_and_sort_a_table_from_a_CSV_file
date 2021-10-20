@@ -1,19 +1,11 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { FC } from "react";
 import "./App.css";
-import { Table } from "./components";
-import { fetchData } from "./redux/actions/table";
+import { PricingTables } from "./components/PricingTables";
 
-const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchData());
-  }, [dispatch]);
-
+const App: FC = () => {
   return (
     <div className="app_wrapper">
-      <Table />
+      <PricingTables />
     </div>
   );
 };

@@ -9,7 +9,7 @@ export const fetchDataAction = (payload: string[][]) => ({
   payload,
 });
 
-export const fetchData =
+export const fetchDataForPricingTables =
   () => async (dispatch: ThunkDispatch<RootType, undefined, Action>) => {
     try {
       const data = await csvParser("data/data.csv");

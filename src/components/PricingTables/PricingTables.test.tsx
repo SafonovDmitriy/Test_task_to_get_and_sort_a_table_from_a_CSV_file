@@ -3,7 +3,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import { Table } from "..";
+import { PricingTables } from ".";
 describe("Table Component", () => {
   const sortData = [
     ["Names", "Pkg1", "Pkg2", "Pkg3"],
@@ -34,7 +34,7 @@ describe("Table Component", () => {
   it("render Table component", () => {
     const { container } = render(
       <Provider store={store}>
-        <Table />
+        <PricingTables />
       </Provider>
     );
     expect(container).toBeInTheDocument();
