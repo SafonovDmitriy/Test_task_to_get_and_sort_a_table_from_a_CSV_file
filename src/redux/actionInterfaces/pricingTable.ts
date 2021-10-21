@@ -1,4 +1,4 @@
-import { pricingTableActionTypes } from "../actionTypes/pricingTables";
+import { pricingTableActionTypes } from "../actionTypes/pricingTable";
 
 export interface ITableState {
   data: Array<string[]>;

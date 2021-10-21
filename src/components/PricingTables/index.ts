@@ -1,1 +1,1 @@
-export { default as PricingTables } from "./PricingTablesContainer";
+export { default as PricingTable } from "./PricingTableContainer";

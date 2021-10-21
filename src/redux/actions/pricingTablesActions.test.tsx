@@ -2,8 +2,7 @@ import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import * as csvParser from "../../helpers/csvParser";
 import * as csvSorting from "../../helpers/csvSorting";
-
-import { fetchDataForPricingTables } from "./pricingTablesActions";
+import { fetchDataForPricingTable } from "./pricingTablesActions";
 
 const withoutSortData = [
   ["Names", "Pkg1", "Pkg2", "Pkg3"],
@@ -65,7 +64,7 @@ describe("Pricing Tables Actions", () => {
       .mockReturnValue(sortData);
 
     //@ts-ignore
-    await store.dispatch(fetchDataForPricingTables());
+    await store.dispatch(fetchDataForPricingTable());
 
     expect(spyCsvParser).toHaveBeenCalledTimes(1);
     expect(spyCsvSorting).toHaveBeenCalledTimes(1);
@@ -74,6 +73,6 @@ describe("Pricing Tables Actions", () => {
     jest.spyOn(csvParser, "default").mockRejectedValue("mockError");
 
     //@ts-ignore
-    store.dispatch(fetchDataForPricingTables());
+    store.dispatch(fetchDataForPricingTable());
   });
 });

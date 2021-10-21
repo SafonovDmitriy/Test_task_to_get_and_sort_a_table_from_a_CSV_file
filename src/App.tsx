@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import "./App.css";
-import { PricingTables } from "./components/PricingTables";
+import { PricingTable } from "./components/PricingTables";
 
 const App: FC = () => (
   <div className="app_wrapper">
-    <PricingTables />
+    <PricingTable />
   </div>
 );
 

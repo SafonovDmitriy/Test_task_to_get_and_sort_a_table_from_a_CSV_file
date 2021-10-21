@@ -1,7 +1,7 @@
-import { setDataForPricingTablesAction } from "../actions/pricingTablesActions";
-import { pricingTablesReducer } from "./pricingTablesReducer";
+import { setDataForPricingTableAction } from "../actions/pricingTablesActions";
+import { PricingTableReducer } from "./pricingTableReducer";
 
-describe("Pricing Tables reducer", () => {
+describe("Pricing Table reducer", () => {
   const store = { data: [] };
   const data = [
     ["Names", "Pkg1", "Pkg2", "Pkg3"],
@@ -9,9 +9,9 @@ describe("Pricing Tables reducer", () => {
     ["Description", "Pkg1 description", "Pkg2 description", "Pkg3 description"],
   ];
   it("Whether Action fetch_data works", async () => {
-    const newState = pricingTablesReducer(
+    const newState = PricingTableReducer(
       store,
-      setDataForPricingTablesAction(data)
+      setDataForPricingTableAction(data)
     );
     expect(newState.data.length).not.toBe(0);
   });

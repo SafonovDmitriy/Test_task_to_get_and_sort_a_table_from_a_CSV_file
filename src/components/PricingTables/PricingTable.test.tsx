@@ -3,7 +3,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import { PricingTables } from ".";
+import { PricingTable } from ".";
 describe("Table Component", () => {
   const sortData = [
     ["Names", "Pkg1", "Pkg2", "Pkg3"],
@@ -30,11 +30,11 @@ describe("Table Component", () => {
   ];
   const middlewares = [thunk];
   const mockStore = configureMockStore(middlewares);
-  const store = mockStore({ pricingTables: { data: sortData } });
+  const store = mockStore({ PricingTable: { data: sortData } });
   it("render Table component", () => {
     const { container } = render(
       <Provider store={store}>
-        <PricingTables />
+        <PricingTable />
       </Provider>
     );
     expect(container).toBeInTheDocument();

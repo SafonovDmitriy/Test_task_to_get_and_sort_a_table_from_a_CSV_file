@@ -1,14 +1,14 @@
 import {
   IFetchDataForPricingTable,
   ITableState,
-} from "../actionInterfaces/pricingTables";
-import { pricingTableActionTypes } from "../actionTypes/pricingTables";
+} from "../actionInterfaces/pricingTable";
+import { pricingTableActionTypes } from "../actionTypes/pricingTable";
 
 const initialState: ITableState = {
   data: [],
 };
 
-export const pricingTablesReducer = (
+export const PricingTableReducer = (
   state = initialState,
   action: IFetchDataForPricingTable
 ) => {

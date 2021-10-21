@@ -1,18 +1,18 @@
 import { FC } from "react";
 import { SYMBOLS_MAP } from "../../constants";
-import "./PricingTablesStyle.css";
+import "./PricingTableStyle.css";
 
 const checkIfGroup = (tr: string[]): boolean =>
   tr.filter((item) => item).length === 1;
 
-interface IPricingTablesProps {
-  dataForPricingTables: Array<string[]>;
+interface IPricingTableProps {
+  dataForPricingTable: Array<string[]>;
 }
 
-const PricingTables: FC<IPricingTablesProps> = ({ dataForPricingTables }) => (
+const PricingTable: FC<IPricingTableProps> = ({ dataForPricingTable }) => (
   <table className="app_table">
     <tbody>
-      {dataForPricingTables.map((tr, idxTr) => (
+      {dataForPricingTable.map((tr, idxTr) => (
         <tr key={idxTr} className={checkIfGroup(tr) ? "boldText" : ""}>
           {tr.map((td, idxTd) => (
             <td key={`${idxTr}-${idxTd}`}>{SYMBOLS_MAP[td] || td}</td>
@@ -23,4 +23,4 @@ const PricingTables: FC<IPricingTablesProps> = ({ dataForPricingTables }) => (
   </table>
 );
 
-export default PricingTables;
+export default PricingTable;
