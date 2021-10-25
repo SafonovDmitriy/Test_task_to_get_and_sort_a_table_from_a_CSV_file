@@ -1,8 +1,5 @@
-import {
-  IFetchDataForPricingTable,
-  ITableState,
-} from "../actionInterfaces/pricingTable";
-import { pricingTableActionTypes } from "../actionTypes/pricingTable";
+import { PRICING_TABLE_ACTION_TYPE_ENUM } from "../actionTypes/pricingTable";
+import { IFetchDataForPricingTable, ITableState } from "../interfaces";
 
 const initialState: ITableState = {
   data: [],
@@ -13,7 +10,7 @@ export const PricingTableReducer = (
   action: IFetchDataForPricingTable
 ) => {
   switch (action.type) {
-    case pricingTableActionTypes.SET_DATA_FOR_PRICING_TABLES:
+    case PRICING_TABLE_ACTION_TYPE_ENUM.SET_DATA_FOR_PRICING_TABLE:
       return { ...state, data: action.payload };
     default:
       return state;

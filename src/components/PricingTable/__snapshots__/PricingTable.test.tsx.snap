@@ -1,0 +1,358 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pricing Table Presentation Component render Pricing Presentation Table component 1`] = `
+<table
+  className="app_table"
+>
+  <tbody>
+    <tr
+      className=""
+    >
+      <td>
+        Names
+      </td>
+      <td>
+        Pkg1
+      </td>
+      <td>
+        Pkg2
+      </td>
+      <td>
+        Pkg3
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Price (€)
+      </td>
+      <td>
+        5
+      </td>
+      <td>
+        50
+      </td>
+      <td>
+        100
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Description
+      </td>
+      <td>
+        Pkg1 description
+      </td>
+      <td>
+        Pkg2 description
+      </td>
+      <td>
+        Pkg3 description
+      </td>
+    </tr>
+    <tr
+      className="boldText"
+    >
+      <td>
+        Application Intergrations
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Install custom apps
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        -
+      </td>
+      <td>
+        -
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Install new apps
+      </td>
+      <td>
+        -
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+    </tr>
+    <tr
+      className="boldText"
+    >
+      <td>
+        Blog
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Create your own blog
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Upload Images
+      </td>
+      <td>
+        -
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+    </tr>
+    <tr
+      className="boldText"
+    >
+      <td>
+        File Storage
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Share files with team
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Upload files
+      </td>
+      <td>
+        -
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        -
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Watch Videos
+      </td>
+      <td>
+        -
+      </td>
+      <td>
+        -
+      </td>
+      <td>
+        -
+      </td>
+    </tr>
+    <tr
+      className="boldText"
+    >
+      <td>
+        Reporting
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        
+      </td>
+      <td>
+        
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Create your own reports
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Detailed Reports
+      </td>
+      <td>
+        -
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+    </tr>
+    <tr
+      className=""
+    >
+      <td>
+        Weekly Data Reports
+      </td>
+      <td>
+        -
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+      <td>
+        <span
+          className="checkMark"
+        >
+          ✓
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
