@@ -4,12 +4,15 @@ import thunk from "redux-thunk";
 import { PricingTableReducer } from "./reducers/pricingTableReducer";
 
 const reducers = combineReducers({
-  PricingTable: PricingTableReducer,
+  pricingTable: PricingTableReducer,
 });
+const isProduction = process.env.NODE_ENV === "production";
 
 const store = createStore(
   reducers,
-  composeWithDevTools(applyMiddleware(thunk))
+  isProduction
+    ? applyMiddleware(thunk)
+    : composeWithDevTools(applyMiddleware(thunk))
 );
 export type RootType = ReturnType<typeof reducers>;
 export default store;
