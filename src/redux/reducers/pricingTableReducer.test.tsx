@@ -8,7 +8,7 @@ describe("Pricing Table reducer", () => {
     ["Price (€)", "5", "50", "100"],
     ["Description", "Pkg1 description", "Pkg2 description", "Pkg3 description"],
   ];
-  it("Whether Action fetch_data works", async () => {
+  it("Wether Action fetch_data works", async () => {
     const newState = PricingTableReducer(
       store,
       setDataForPricingTableAction(data)

@@ -69,7 +69,7 @@ describe("Pricing Tables Actions", () => {
     expect(spyCsvParser).toHaveBeenCalledTimes(1);
     expect(spyCsvSorting).toHaveBeenCalledTimes(1);
   });
-  it("Return errors from csvParser and hit in Catch", () => {
+  it("Return errors from csvParser and hint in Catch", () => {
     jest.spyOn(csvParser, "default").mockRejectedValue("mockError");
 
     //@ts-ignore
