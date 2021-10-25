@@ -1,48 +1,37 @@
-const csvSorting = (
-  notASortedArrayForPriceTable: Array<string[]>
-): Array<string[]> => {
-  let _categiryTitle: string = "";
-  const newData: Array<string[]> = [];
-  let categoriesList = notASortedArrayForPriceTable.reduce(
-    (acc: IRow[], item: string[]) => {
-      if (counterOfNonEmptyFields(item) === 1) {
-        _categiryTitle = item[0];
-        acc.push([_categiryTitle, []]);
-      }
+import { IDataForPricingTable, IRow } from "../types";
 
-      if (!_categiryTitle) {
-        newData.push(item);
-        return acc;
-      }
-      if (counterOfNonEmptyFields(item) > 1) {
-        const itemIndex = acc.findIndex(
-          (item: IRow) => item[0] === _categiryTitle
-        );
-        acc[itemIndex][1].push(item);
-      }
+const csvSorting = (notASortedArrayForPriceTable: IRow[]): IRow[] => {
+  let _categoryTitle: string;
+  const sortedTable: IDataForPricingTable = [];
+  const categories = new Map();
 
-      return acc;
-    },
-    [] as IRow[]
-  );
+  notASortedArrayForPriceTable.forEach((row) => {
+    if (counterOfNonEmptyFields(row) === 1) {
+      //This is a string called category
+      _categoryTitle = row[0]; // Save the name of the category
+      categories.set(_categoryTitle, []); // Add to category item with key _categoryTitle
+    } else if (!_categoryTitle) {
+      // This is the element of the header that you do not need to sort
+      sortedTable.push(row);
+    } else {
+      // This is the inside of element that relate to a certain category
+      categories.get(_categoryTitle).push(row); // Adding an element with a key name of the subtype category related to it
+    }
+  });
 
-  const sortedArrayByCategory = categoriesList.sort((a: IRow, b: IRow) =>
-    mySort(a, b)
-  );
-  for (const value of sortedArrayByCategory) {
-    value[1].sort((a: string[], b: string[]) => mySort(a, b));
-    newData.push(["", "", "", ""], [value[0], "", "", ""], ...value[1]);
-  }
-  return newData;
+  const assortedTable = [...categories].sort(); // Sorting table by category names
+
+  assortedTable.forEach((category) => {
+    const { 0: titleCategory, 1: listOfInternalCategories } = category;
+    const _categoryTitleRow = [titleCategory, "", "", ""];
+    const _sortedListOfInternalCategories = listOfInternalCategories.sort(); //Sort internal elements of a specific category
+
+    sortedTable.push(_categoryTitleRow, ..._sortedListOfInternalCategories);
+  });
+  return sortedTable;
 };
 
-const counterOfNonEmptyFields = (array: string[]): number =>
-  array.filter((item) => item).length;
-
-const mySort = (a: IRow | string[], b: IRow | string[]): number => {
-  if (a[0] > b[0]) return 1;
-  if (a[0] < b[0]) return -1;
-  return 0;
-};
+const counterOfNonEmptyFields = (array: IRow): number =>
+  array.filter((i) => i).length;
 
 export default csvSorting;
