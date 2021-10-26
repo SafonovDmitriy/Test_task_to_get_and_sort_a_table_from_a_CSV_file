@@ -10,7 +10,7 @@ React was used to implement this assignment.\
 CSS was used for styling.\
 Redux with Thunk was used as the data store.\
 JEST was used for testing.\
-Typed with TypeScript.\
+Typed with TypeScript.
 
 ## Available scripts.
 
