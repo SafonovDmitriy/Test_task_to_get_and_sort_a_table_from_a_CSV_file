@@ -6,11 +6,11 @@ Parses a table of prices from a CSV file. Sorts this table by service category a
 
 ## Toolkit.
 
-React was used to implement this assignment.
-CSS was used for styling.
-Redux with Thunk was used as the data store.
-JEST was used for testing.
-Typed with TypeScript.
+React was used to implement this assignment.\
+CSS was used for styling.\
+Redux with Thunk was used as the data store.\
+JEST was used for testing.\
+Typed with TypeScript.\
 
 ## Available scripts.
 
