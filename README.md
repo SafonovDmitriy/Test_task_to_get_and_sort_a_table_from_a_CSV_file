@@ -40,12 +40,12 @@ It properly connects React in production mode and optimizes the build for better
 The build is minified and file names include hashes.\
 Your application is ready for deployment!
 
-### `npm run coverage:dev
+### npm run coverage:dev
 
 Launches the test run program in interactive view mode.
 Creates a test coverage tree
 
-### `npm run coverage:prod.
+### npm run coverage:prod.
 
 Runs a program to run tests. Builds test coverage tree and hides all console.log
 
